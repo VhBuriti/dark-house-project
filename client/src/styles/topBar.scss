@@ -1,0 +1,12 @@
+.top-bar {
+    display: flex;
+    color: #98989A;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    .top-bar__arrow {
+        color: #FFD11A;
+        margin-left: 10px;
+        height: 18px;
+    }
+}

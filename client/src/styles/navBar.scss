@@ -1,0 +1,23 @@
+.nav-bar {
+    width: 100%;
+    padding: 24px 0;
+    background-color: rgb(25, 25, 25);
+    .nav-bar__items {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        li{
+            list-style: none;
+            margin: 0 40px;
+            cursor: pointer;
+        }
+        .nav-bar__account {
+            background-color: #FFD11A;
+            color: #000;
+            padding: 14px 20px;
+            margin: 0 15px;
+            border-radius: 15px;
+        }
+    }
+}
