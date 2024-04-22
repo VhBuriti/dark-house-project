@@ -1,7 +1,7 @@
 .nav-bar {
     width: 100%;
     padding: 24px 0;
-    background-color: rgb(25, 25, 25);
+    background-color: var(--bg-focus-0);
     .nav-bar__items {
         display: flex;
         justify-content: center;
@@ -13,8 +13,8 @@
             cursor: pointer;
         }
         .nav-bar__account {
-            background-color: #FFD11A;
-            color: #000;
+            background-color: var(--bg-focus-1);
+            color: var(--color-primary-1);
             padding: 14px 20px;
             margin: 0 15px;
             border-radius: 15px;
