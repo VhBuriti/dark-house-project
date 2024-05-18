@@ -1,21 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './styles/global.scss'
-import NavBar from './components/common/NavBar';
-import TopBar from './components/common/TopBar';
-import MainBanner from './components/sections/MainBanner';
-import CreateNewPost from './components/sections/CreateNewPost';
-import AllPosts from './components/sections/AllPosts';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./styles/global.scss";
+import NavBar from "./components/common/NavBar";
+import TopBar from "./components/common/TopBar";
+import MainBanner from "./components/sections/MainBanner";
+import AllPosts from "./components/sections/AllPosts";
+
+import CreateNewPostPage from "./pages/CreateNewStory";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
-  <React.StrictMode>
+  <Router>
     <TopBar />
     <NavBar />
-    <MainBanner />
-    <AllPosts />
-    <CreateNewPost />
-  </React.StrictMode>
+
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <>
+            <MainBanner />
+            <AllPosts />
+          </>
+        }
+      />
+
+      <Route path="/create-new-story" element={<CreateNewPostPage />} />
+    </Routes>
+  </Router>
 );
