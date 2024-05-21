@@ -1,14 +1,25 @@
-import React from "react";
-import '../../../styles/allPosts.scss'
+import React, { useEffect, useState } from "react";
+import "../../../styles/allPosts.scss";
 import PostCard from "../PostCard";
+import { GetAllPosts } from "../../../utils/getAllPosts.tsx";
 
 export default function AllPosts() {
+  const [posts, setPosts] = useState([]);
 
-    return(
-        <div className="all-posts__container">
-            <PostCard />
-            <PostCard />
-            <PostCard />
-        </div>
-    )
+  useEffect(() => {
+    (async function () {
+      const allPosts = await GetAllPosts();
+      setPosts(allPosts);
+    })();
+  }, []);
+
+  return (
+    <div className="all-posts__container">
+      {posts.map((postContent: any) => (
+        <>
+          <PostCard postContent={postContent?.story}/>
+        </>
+      ))}
+    </div>
+  );
 }

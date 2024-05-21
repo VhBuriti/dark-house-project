@@ -1,0 +1,36 @@
+.modal-new-post__container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    backdrop-filter: blur(10px);
+
+    .modal-new-post-inner-container {
+        padding: 32px;
+        background-color:var(--bg-focus-0);
+        display: flex;
+        border-radius: 20px;
+        justify-content: center;
+        .modal-new-post-content {
+            display: flex;
+            flex-direction: column;
+
+            h3 {
+                font-size: 24px;
+            }
+            .modal-new-post-btn {
+                margin-top: 20px;
+                background-color: var(--bg-focus-1);
+                color: var(--color-primary-1);
+                border-radius: 15px;
+                border: none;
+                font-size: 18px;
+                padding: 6px 35px;
+
+            }
+        }
+    }
+}

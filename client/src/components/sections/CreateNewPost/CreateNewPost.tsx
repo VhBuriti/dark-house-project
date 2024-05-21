@@ -52,11 +52,14 @@ export default function CreateNewPost() {
       </div>
 
       {showModal && (
+        <>
+
         <CreatePostModal
           postAuthor={"test"}
           postContent={postContent}
           postTitle={postTitle}
         />
+        </>
       )}
     </>
   );

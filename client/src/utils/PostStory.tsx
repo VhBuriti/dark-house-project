@@ -17,8 +17,8 @@ export async function PostStory(
     author: postAuthor,
     title: postTitle,
     content: postContent,
-    postDate: formattedDate,
     category: postCategory,
+    postDate: formattedDate,
   };
 
   const res = await fetch("/api/all-stories", {
@@ -29,8 +29,6 @@ export async function PostStory(
     },
   });
   const newPost = await res.json();
-
-  console.log('newPost', newPost)
 
   return newPost;
 }
