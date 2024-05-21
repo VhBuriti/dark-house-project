@@ -3,10 +3,12 @@ import '../../../styles/postCard.scss'
 
 export default function PostCard({postContent}: any) {
 
-    const { author, title, content, postDate, category } = postContent
+    const { author, title, content, postDate, category, _id } = postContent
+    const postUrl = title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
 
     return(
         <div className="post-card__container">
+            <a href={`/story/${postUrl}-${_id}`}>
             <div className="post-card__author-details">
                 <img src={require("../../../assets/placeholder.webp")} alt="" className="post-card__avatar"/>
                 <p className="post-card__author">{author}</p>
@@ -24,6 +26,7 @@ export default function PostCard({postContent}: any) {
                     <p className="post-card__article-type">{category}</p>
                 )}
             </div>
+            </a>
         </div>
     )
 }

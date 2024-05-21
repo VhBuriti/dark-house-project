@@ -5,6 +5,7 @@ import NavBar from "./components/common/NavBar";
 import TopBar from "./components/common/TopBar";
 import MainBanner from "./components/sections/MainBanner";
 import AllPosts from "./components/sections/AllPosts";
+import PostPage from "./pages/PostPage";
 
 import CreateNewPostPage from "./pages/CreateNewStory";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
@@ -27,6 +28,8 @@ root.render(
           </>
         }
       />
+
+      <Route path="/story/:id" element={<PostPage/>}/>
 
       <Route path="/create-new-story" element={<CreateNewPostPage />} />
     </Routes>

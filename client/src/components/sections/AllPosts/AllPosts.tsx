@@ -11,13 +11,14 @@ export default function AllPosts() {
       const allPosts = await GetAllPosts();
       setPosts(allPosts);
     })();
+    
   }, []);
 
   return (
     <div className="all-posts__container">
       {posts.map((postContent: any) => (
         <>
-          <PostCard postContent={postContent?.story}/>
+          <PostCard postContent={postContent}/>
         </>
       ))}
     </div>
