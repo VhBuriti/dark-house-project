@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "../../../styles/allPosts.scss";
 import PostCard from "../PostCard";
 import { GetAllPosts } from "../../../utils/getAllPosts.tsx";

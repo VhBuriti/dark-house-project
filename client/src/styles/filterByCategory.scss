@@ -1,0 +1,27 @@
+.filter-categories__title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  margin: 8px 0 8px 0;
+  display: block !important;
+}
+.filter-categories__container {
+  display: flex;
+  flex-flow: row wrap;
+  transition: ease-in-out 0.3s;
+  .category-btn {
+    background-color: var(--bg-focus-2);
+    padding: 6px 8px;
+    border-radius: 15px;
+    margin: 5px 5px 5px 0;
+    color: var(--color-primary-0);
+    border: 1px var(--border-primary-color-1);
+  }
+}
+
+.show-more-btn, .show-less-btn {
+    border: none;
+    margin-top: 15px;
+    background-color: transparent;
+    color: var(--color-primary-0);
+}

@@ -4,6 +4,7 @@ export async function PostStory(
   postTitle: string,
   postContent: string,
   postCategory: string,
+  postThumb: string
 ) {
     
   const currentDate = new Date();
@@ -19,6 +20,7 @@ export async function PostStory(
     content: postContent,
     category: postCategory,
     postDate: formattedDate,
+    postThumb: postThumb
   };
 
   const res = await fetch("/api/all-stories", {

@@ -15,16 +15,30 @@ export default function CreatePostModal({
   postTitle,
 }: InitialPostState) {
   const [postCategory, setPostCategory] = useState(postCategories[0] || "");
-  
+  const [image, setImage] = useState<any>()
+
   const CreateNewPost = async () => {
     const newPost = await PostStory(
       postAuthor,
       postTitle,
       postContent,
-      postCategory
+      postCategory,
+      image
     );
     window.location.href = '/'
   };
+
+  function convertImageToBase64(e: any) {
+    const reader = new FileReader();
+    reader.readAsDataURL(e.target.files[0]);
+    reader.onload = () => {
+      console.log(reader.result);
+      setImage(reader.result)
+    }
+    reader.onerror = error => {
+      console.log("Error trying to upload an image: ", error)
+    }
+  }
 
   return (
     <div className="modal-new-post__container">
@@ -36,7 +50,10 @@ export default function CreatePostModal({
               <option value={category}>{category}</option>
             ))}
           </select>
+          
 
+          <input type="file" accept="image/*" onChange={convertImageToBase64} required/>
+          <img src={image} alt="" />
           <button onClick={CreateNewPost} className="modal-new-post-btn">
             Publish!
           </button>

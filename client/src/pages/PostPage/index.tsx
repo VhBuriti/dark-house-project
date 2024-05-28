@@ -8,7 +8,7 @@ export default function PostPage() {
   const match = window.location.href.match(regex);
   const postId = match ? match[0] : "";
 
-  const { author, title, content, postDate, category, _id } = post
+  const { author, title, content, postDate, category, _id, postThumb } = post;
 
   useEffect(() => {
     (async function () {
@@ -19,12 +19,12 @@ export default function PostPage() {
   }, []);
 
   const paragraphs = content?.split(/\n\n/);
-  console.log('content', paragraphs)
+  console.log("content", paragraphs);
 
   return (
     <>
       <h2>{title}</h2>
-
+      <img src={postThumb} />
       <div>
         <span>{author}·</span>
         <span>{postDate}·</span>
