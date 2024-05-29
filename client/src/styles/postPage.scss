@@ -1,0 +1,11 @@
+.post-page__container {
+    display: flex;
+    justify-content: center;
+    .post-page__inner-container {
+        max-width: 680px;
+        margin: 16px;
+    }
+    .post-page__title-container {
+        font-size: 32px;
+    }
+}
