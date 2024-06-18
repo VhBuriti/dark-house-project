@@ -3,4 +3,4 @@
 Work in progress...
 
 
-Made with <3 by Victor Hugo
+Made with ❤️ by Victor Hugo
